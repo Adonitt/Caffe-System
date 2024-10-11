@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="nav-section">
+        <button class="hamburger" id="hamburger-btn">&#9776;</button>
+
+        <div class="nav">
+          <nav class="nav-links" id="nav-links">
+            <h1 class="welcome">
+              Welcome <span class="welcome" id="user-login"></span>
+            </h1>
+            <button class="links" id="dashboard">Dashboard</button>
+            <button class="links" id="inventory">Inventory</button>
+            <button class="links" id="menu">Menu</button>
+            <button class="links" id="customer">Customer</button>
+            <button class="sign-out" id="sign-out">Sign Out</button>
+          </nav>
+        </div>
+      </section>
+
+      <section class="table-container" id="table-container">
+        <h2>Inventory</h2>
+
+        <table id="table">
+          <thead>
+            <th>Date</th>
+            <th>Total</th>
+          </thead>
+
+          <tbody id="products-tbody"></tbody>
+          <p class="select" id="select"></p>
+        </table>
+      </section>
+      <section class="date-section" id="date-section">
+        <label for="date-picker"><h1>Choose a Date:</h1></label>
+        <input type="date" id="date-picker" name="date-picker" />
+        <button id="search-btn">Search</button>
+        <h1>Total: <span class="total-today" id="total-today">$0.00</span></h1>
+      </section>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
