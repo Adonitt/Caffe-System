@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="nav-section">
+        <button class="hamburger" id="hamburger-btn">&#9776;</button>
+
+        <div class="nav">
+
+          <nav class="nav-links" id="nav-links">
+            <h1 class="welcome">
+              Welcome <span class="welcome" id="user-login"> </span>
+            </h1>
+            <button class="links" id="dashboard">Dashboard</button>
+            <button class="links" id="inventory">Inventory</button>
+            <button class="links" id="menu">Menu</button>
+            <button class="links" id="customer">Customer</button>
+            <button class="sign-out" id="sign-out">Sign Out</button>
+          </nav>
+        </div>
+      </section>
+
+      <section class="products-section">
+        <h2>Dashboard</h2>
+        <div class="btn-products">
+          <button class="foods" id="foods">Foods</button>
+          <button class="drinks" id="drinks">Drinks</button>
+          <button class="desserts" id="desserts">Desserts</button>
+        </div>
+        <p class="select" id="select">Please select the category</p>
+
+        <div class="products" id="products"></div>
+      </section>
+      <section class="invoice-section">
+        <div class="d-invoices" id="d-invoices">
+          <div id="invoice-table-container">
+            <div class="invoice-table" id="invoice-table"></div>
+          </div>
+          <div class="invoice-sum" id="invoice-sum">
+            <div class="total">
+              Total: $ <span id="total" class="total">0.00</span>
+            </div>
+            <div class="amount">
+              Amount:
+              <input
+                type="number"
+                placeholder="$0.00"
+                id="amount"
+                class="inp"
+              />
+              <button class="charge-btn" id="charge-btn">Check change</button>
+            </div>
+            <div class="charge">
+              Change: $<span id="charge" class="charge">0.00</span>
+            </div>
+            <p class="pay-message" id="pay-message"></p>
+          </div>
+          <button class="pay" id="pay">Pay</button>
+          <div class="btns">
+            <button class="clear" id="clear">Clear</button>
+            <button class="show-invoice" id="show-invoice">Show Invoice</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="invoiceModal" class="modal"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

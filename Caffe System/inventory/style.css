@@ -1,0 +1,280 @@
+/* ////////////////////////////////////////////////////////////// */
+html {
+  background-color: rgb(177, 172, 166);
+}
+body {
+  margin: 0;
+}
+
+img {
+  width: 100px;
+  height: 75px;
+  align-items: center;
+  margin: 0;
+  border: none;
+}
+
+.welcome {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(56, 26, 26);
+  margin: auto;
+  color: white;
+}
+.container {
+  width: 100%;
+  height: auto;
+  height: 600px;
+  display: grid;
+  grid-template-columns: auto 1200px 250px;
+  gap: 10px;
+  margin: 0;
+}
+/* NAV LINKS - LEFT SIDE */
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgb(177, 172, 166), rgba(127, 122, 122, 0.95));
+
+  padding: 20px;
+  top: 10px;
+  left: 8px;
+  height: 600px;
+  position: fixed;
+  width: 255px;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+.links {
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 15px;
+  background: linear-gradient(rgb(101, 100, 99), rgba(83, 81, 81, 0.95));
+  text-align: center;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.links:hover {
+  background: linear-gradient(rgb(67, 61, 56), rgba(105, 102, 102, 0.95));
+}
+.sign-out {
+  margin-top: auto;
+  background-color: wheat;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 15px;
+}
+
+.sign-out:hover {
+  background-color: red;
+  color: white;
+}
+/* Hamburger button styling */
+.hamburger {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* Main content styling */
+.table-container,
+.date-section {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+  width: 100%;
+}
+
+/* Show the navbar when it's active */
+.nav.active {
+  display: block;
+}
+
+/* Adjust the content width when the navbar is shown */
+.nav-active .table-container,
+.nav-active .date-section {
+  margin-left: 255px;
+  width: calc(100% - 255px);
+}
+
+.nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 255px;
+  padding: 20px;
+  border-radius: 0 15px 15px 0;
+  z-index: 999;
+}
+
+/* Show the navbar when it's active */
+.nav.active {
+  display: block;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+.table-customers {
+  overflow-y: auto;
+}
+
+table {
+  width: 98.3%;
+  border-collapse: collapse;
+  margin: 10px;
+}
+
+thead th,
+tbody td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+table,
+th,
+td {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 18px;
+  width: 1150px;
+}
+th {
+  background-color: rgb(66, 62, 57);
+  color: white;
+}
+
+tr {
+  background: linear-gradient(rgb(176, 174, 172), rgba(158, 148, 148, 0.95));
+  text-align: center;
+}
+.table-container {
+  display: grid;
+  grid-template-rows: 75px 50px 350px 220px;
+}
+.table-products {
+  overflow-y: scroll;
+}
+h2 {
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  color: white;
+  font-size: 35px;
+  background: linear-gradient(rgb(176, 174, 172), rgba(105, 102, 102, 0.95));
+  box-shadow: 3px 2px 3px black;
+}
+.loader-container {
+  height: 100vh; /* full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* stack loader and text vertically */
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #472713;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+.text {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Right Side Date Picker */
+.date-section {
+  background: linear-gradient(
+    135deg,
+    rgba(133, 128, 121, 0.9),
+    rgba(61, 61, 61, 0.95)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 600px;
+  margin: 10px;
+  border-radius: 15px;
+  position: fixed;
+  right: 0;
+  width: 200px;
+}
+
+.date-section h1 {
+  font-size: 22px;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.date-section input[type="date"] {
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: rgb(56, 26, 26);
+  margin-bottom: 15px;
+}
+
+.date-section input[type="date"]:focus {
+  outline: none;
+  border-color: rgb(86, 72, 72);
+}
+
+.date-section button {
+  font-size: 16px;
+  padding: 10px 20px;
+  color: white;
+  background-color: rgb(86, 72, 72);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.date-section button:hover {
+  background-color: rgba(29, 28, 27, 0.829);
+}
+
+/* background: linear-gradient(135deg, rgba(133, 128, 121, 0.9), rgba(61, 61, 61, 0.95));  */
+
+.select {
+  text-align: center;
+  margin: 20px;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times;
+  font-weight: bold;
+  display: none;
+}

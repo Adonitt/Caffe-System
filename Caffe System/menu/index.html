@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <section class="nav-section">
+        <button class="hamburger" id="hamburger-btn">&#9776;</button>
+
+        <div class="nav">
+          <nav class="nav-links" id="nav-links">
+            <h1 class="welcome">
+              Welcome <span class="welcome" id="user-login"> </span>
+            </h1>
+            <button class="links" id="dashboard">Dashboard</button>
+            <button class="links" id="inventory">Inventory</button>
+            <button class="links" id="menu">Menu</button>
+            <button class="links" id="customer">Customer</button>
+            <button class="sign-out" id="sign-out">Sign Out</button>
+          </nav>
+        </div>
+      </section>
+      <section class="table-container" id="table-container">
+        <h2>Menu</h2>
+        <div class="categories-btns" id="categories-btns">
+          <button class="foods" id="foods">Foods</button>
+          <button class="drinks" id="drinks">Drinks</button>
+          <button class="desserts" id="desserts">Desserts</button>
+        </div>
+
+        <div class="table-products" id="table-products">
+          <p class="selectP" id="selectP">Please select the category</p>
+        </div>
+        <div class="other-options" id="other-options">
+          <fieldset>
+            <label for=""
+              >Product Name
+              <input type="text" id="product-name" required />
+            </label>
+            <label for=""
+              >Quantity
+              <input type="number" id="product-qty" required />
+            </label>
+            <label for="">
+              Price ($)
+              <input type="number" id="product-price" required />
+            </label>
+            <label for="">
+              Category
+              <select name="category" id="product-category" required>
+                <option value="select">Select Category</option>
+                <option value="foods">Food</option>
+                <option value="drinks">Drink</option>
+                <option value="desserts">Dessert</option>
+              </select>
+            </label>
+
+            <label for="image-url"
+              >Image URL
+              <input type="text" id="image-url" />
+            </label>
+
+            <div class="image-preview">
+              <img
+                id="image-display"
+                src=""
+                alt="Product Image"
+                style="display: none; width: 150px; height: 150px"
+              />
+            </div>
+          </fieldset>
+          <hr />
+          <div class="buttons" id="buttons">
+            <button class="add-btn" id="add-btn">Add</button>
+            <button class="clear-btn" id="clear-btn">Clear</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
