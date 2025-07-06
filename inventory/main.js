@@ -86,7 +86,7 @@ const table = document.getElementById("table");
 
 // Function to fetch and display all totals on page load
 async function fetchAndDisplayAllTotals() {
-  const url = "https://67076dd6a0e04071d22a3edc.mockapi.io/payments";
+  const url = "https://67076dd6a0e04071d22a3edc.mocka pi.io/payments";
   try {
     const response = await fetch(url);
     if (!response.ok) {
