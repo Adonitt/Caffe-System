@@ -30,6 +30,15 @@
 </form>
 </body>
 
-<script src="js/login.js"></script>
 
+<script>
+    function isMobile() {
+        return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    if (isMobile()) {
+        alert("Ky projekt nuk mund të hapet në telefon. Ju lutem përdorni një kompjuter.");
+    }
+</script>
+<script src="js/login.js"></script>
 </html>
