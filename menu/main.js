@@ -76,11 +76,11 @@ async function getProducts(apiUrl) {
       // Check if a delete button was clicked
       if (event.target && event.target.classList.contains("delete-btn")) {
         // console.log(event.target.dataset);
-        const productId = event.target.getAttribute("data-id"); // Get product ID from button's data attribute
-        const category = event.target.getAttribute("data-category"); // Get category from button's data attribute
-        const rowElement = event.target.closest("tr"); // Get the table row element
+        const productId = event.target.getAttribute("data-id"); 
+        const category = event.target.getAttribute("data-category"); 
+        const rowElement = event.target.closest("tr"); 
 
-        deleteProductFromApi(productId, category, rowElement); // Call function to delete the product from the correct API
+        deleteProductFromApi(productId, category, rowElement); 
       }
     });
   } catch (err) {

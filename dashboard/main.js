@@ -23,8 +23,8 @@ const inventory = document.getElementById("inventory");
 const loggedInUser = localStorage.getItem("loggedInUser");
 username.innerHTML = `${loggedInUser}`;
 
-let products = []; // Global array to store products
-let apiData = []; // Global array to store API products
+let products = [];
+let apiData = [];
 
 async function getProducts(apiUrl) {
   try {
@@ -33,10 +33,10 @@ async function getProducts(apiUrl) {
       throw new Error("Error fetching api data");
     }
 
-    apiData = await apiResponse.json(); // Store products from the second API
+    apiData = await apiResponse.json();
 
-    productsDiv.innerHTML = ""; // Clear previous content
-    productsDiv.classList.add("products"); // Add class to the productsDiv once
+    productsDiv.innerHTML = "";
+    productsDiv.classList.add("products");
 
     apiData.forEach((product, index) => {
       productsDiv.innerHTML += `
@@ -70,8 +70,6 @@ async function getProducts(apiUrl) {
         }
       });
     });
-
-    // Re-attach event listeners to the newly added buttons
   } catch (error) {
     console.error(error.message);
   }
@@ -94,7 +92,7 @@ document.querySelectorAll(".add-btn").forEach((button) => {
   });
 });
 
-const invoiceItems = []; // Global array to keep track of invoice items
+const invoiceItems = [];
 
 function addToTable(name, qty, price) {
   const tableBody = invoiceTable.querySelector("tbody");
@@ -164,8 +162,8 @@ dessertsBtn.addEventListener("click", () => {
 });
 
 chargeBtn.addEventListener("click", () => {
-  const amountValue = parseFloat(amountInp.value) || 0; // Default to 0 if input is empty or invalid
-  const totalValue = parseFloat(totalSpan.textContent.replace("$", "")) || 0; // Remove $ and parse to float
+  const amountValue = parseFloat(amountInp.value) || 0;
+  const totalValue = parseFloat(totalSpan.textContent.replace("$", "")) || 0;
 
   const chargeValue = amountValue - totalValue;
 
