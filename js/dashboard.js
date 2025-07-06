@@ -310,7 +310,7 @@ signOut.addEventListener("click", function () {
     </div>`;
 
     setTimeout(() => {
-      window.location.href = "index.html";
+      window.location.href = "customer.html";
     }, 2500);
   }
 });
