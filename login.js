@@ -46,7 +46,7 @@ btn.addEventListener("click", function (event) {
     localStorage.setItem("loggedInUser", username);
 
     setTimeout(() => {
-      window.location.href = "/dashboard/index.html";
+      window.location.href = "dashboard.html";
     }, 2500);
   } else {
     userAlert.innerHTML = "Invalid Username or Password";
