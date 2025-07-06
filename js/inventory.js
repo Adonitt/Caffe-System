@@ -29,7 +29,7 @@ signOut.addEventListener("click", function () {
       </div>`;
 
     setTimeout(() => {
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }, 2500);
   }
 });
