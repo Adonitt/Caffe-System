@@ -136,7 +136,7 @@ const openFile = (file) => {
 </div>`;
 
   setTimeout(() => {
-    window.location.href = `/${file}/index.html`;
+    window.location.href = `${file}.html`;  // <-- ndryshimi kyç këtu
   }, 400);
 };
 

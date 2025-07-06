@@ -13,42 +13,43 @@ const loggedInUser = localStorage.getItem("loggedInUser");
 user.innerHTML = `${loggedInUser}`;
 
 signOut.addEventListener("click", function () {
-  const confirmation = confirm("Are you sure you want to sign out?");
-  if (confirmation) {
-    document.body.innerHTML = `
+    const confirmation = confirm("Are you sure you want to sign out?");
+    if (confirmation) {
+        document.body.innerHTML = `
     <div class="loader-container">
     <span class="loader"></span>
     <p class='text'>Signing out</p>
     </div>`;
 
-    setTimeout(() => {
-      window.location.href = "customer.html";
-    }, 2500);
-  }
+        setTimeout(() => {
+            window.location.href = "customer.html";
+        }, 2500);
+    }
 });
 
 const openFile = (file) => {
-  document.body.innerHTML = `
+    document.body.innerHTML = `
   <div class="loader-container">
   <span class="loader"></span>
   <p class='text'>Opening ${file.charAt(0).toUpperCase() + file.slice(1)}</p>
   </div>`;
 
-  setTimeout(() => {
-    window.location.href = `/${file}/index.html`;
-  }, 400);
+    setTimeout(() => {
+        window.location.href = `${file}.html`;
+    }, 400);
 };
 const url = "https://66f70a80b5d85f31a341de97.mockapi.io/customers";
-async function getCustomers() {
-  try {
-    const res = await fetch(url);
-    if (!res.ok) {
-      throw new Error("Error fetching data");
-    }
-    const customers = await res.json();
-    console.log(customers);
 
-    tableCustomer.innerHTML = ` <table>
+async function getCustomers() {
+    try {
+        const res = await fetch(url);
+        if (!res.ok) {
+            throw new Error("Error fetching data");
+        }
+        const customers = await res.json();
+        console.log(customers);
+
+        tableCustomer.innerHTML = ` <table>
     <thead>
       <th>Id</th>
       <th>Name</th>
@@ -59,10 +60,10 @@ async function getCustomers() {
      <tbody id="products-tbody">
      </tbody>
     </table>`;
-    const productsBody = document.getElementById("products-tbody");
+        const productsBody = document.getElementById("products-tbody");
 
-    customers.forEach((customer) => {
-      const row = `
+        customers.forEach((customer) => {
+            const row = `
        <tr>
         <td>${customer.id}</td>
         <td>${customer.name}</td>
@@ -71,12 +72,13 @@ async function getCustomers() {
         <td>${customer.yearOld}</td>
       </tr>
       `;
-      productsBody.innerHTML += row;
-    });
-  } catch (err) {
-    console.log(err);
-  }
+            productsBody.innerHTML += row;
+        });
+    } catch (err) {
+        console.log(err);
+    }
 }
+
 getCustomers();
 
 const hamburgerBtn = document.getElementById("hamburger-btn");
@@ -84,11 +86,11 @@ const nav = document.querySelector(".nav");
 const hamburgerNav = document.querySelector(".hamburger");
 
 hamburgerBtn.addEventListener("click", () => {
-  nav.classList.toggle("active");
+    nav.classList.toggle("active");
 });
 
 document.addEventListener("click", (event) => {
-  if (!nav.contains(event.target) && !hamburgerBtn.contains(event.target)) {
-    nav.classList.remove("active"); // Hide navbar
-  }
+    if (!nav.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+        nav.classList.remove("active"); // Hide navbar
+    }
 });
